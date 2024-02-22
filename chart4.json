@@ -36,7 +36,7 @@
     
             "color": {
                 "datum": {"repeat": "layer"},
-                "scale": {"range": ["black", "yellow"]}}
+                "scale": {"range": ["#b23a48", "#9ac4f8"]}}
           } 
       }
   }
