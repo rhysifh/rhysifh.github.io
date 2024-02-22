@@ -16,7 +16,7 @@
     "color": {
       "field": "Country Name",
       "type": "nominal",
-      "scale": {"range": ["red", "blue","green", "yellow", "orange","black"]}
+      "scale": {"range": ["#b23a48", "#9ac4f8","#a8bd3a", "#854d27", "#fa6401","#2e1f27"]}
     }
   }
 }
