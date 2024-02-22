@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Standard bar charts display the ranks of values much more easily when sorted into order",
+  "width": 400,
+  "height": 250,
+  "padding": 10,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "data": [
+    {
+      "name": "source",
+      "url": "https://raw.githubusercontent.com/rhysifh/rhysifh.github.io/main/MES2020.csv",
+      "format": {"type": "csv", "parse": "auto", "delimiter": ","}
+    }
+  ],
+  "scales": [
+    {
+      "name": "yscale",
+      "type": "band",
+      "domain": {
+        "data": "source",
+        "field": "Location",
+        "sort": {"op": "median", "field": "Value", "order": "descending"}
+      },
+      "range": "height",
+      "padding": 0.2,
+      "round": true
+    },
+    {
+      "name": "xscale",
+      "domain": {"data": "source", "field": "Value"},
+      "range": "width"
+    }
+  ],
+  "axes": [
+    {"orient": "bottom", "scale": "xscale"},
+    {"orient": "left", "scale": "yscale"}
+  ],
+  "marks": [
+    {
+      "type": "symbol",
+      "from": {"data": "source"},
+      "encode": {
+        "enter": {
+          "y": {"scale": "yscale", "field": "Location"},
+          "height": {"scale": "yscale", "band": 1},
+          "x": {"scale": "xscale", "field": "Value"},
+          "x2": {"scale": "xscale", "value": 0},
+          "fill": {"value": "#a8bd3a"},
+          "tooltip": {"signal": "datum"}
+        }
+      }
+    }
+  ]
+}
