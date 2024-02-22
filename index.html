@@ -85,6 +85,20 @@
         <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
         <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
 
+        <section>
+            <div class="chart-description"> <!-- we are grouping the title and description together so we can style them together -->
+                <h2>Section 4: API Chart</h2>
+                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                    This is a chart that I've taken from a FRED API
+                </p>
+            </div>
+            <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        </section>
+        <!-- Do you want to add more sections? -->
+            <!-- Try copying pasting the section above -->
+            <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
+            <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
+    
 
     <!-- This is a script, it's a way to run JavaScript code on the page -->
     <script>
@@ -93,10 +107,12 @@
         var figure_1_spec = "s2_chart1.json"; // We're storing the URL of the graph we want to display in a variable
         var figure_2_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json";
         var figure_3_spec = "chart4.json"
+        var figure_4_spec = "https://api.stlouisfed.org/fred/series/observations?series_id=UNRATE&api_key=22ee7a76e736e32f54f5df0a7171538d&file_type=json"
 
         vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
         vegaEmbed('#Location2', figure_2_spec)
         vegaEmbed('#Location3', figure_3_spec)
+        vegaEmbed('#Location4', figure_4_spec)
 
         // Do you want to add more graphs?
         // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
